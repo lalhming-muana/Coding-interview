@@ -45,7 +45,7 @@ const twoSum = function(nums, target){
         }
     }
     
-    return null;
+    return [];
 }
 
 /*
