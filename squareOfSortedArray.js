@@ -24,6 +24,8 @@ array.sort(function(a,b) {return a-b});;
 */
 
 
+
+
 function sortedSquaredArray(array) {
     // Write your code here.
   array.sort( function(a,b) { return a - b; } ); // sort like this for numbers.
