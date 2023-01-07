@@ -22,3 +22,11 @@ for(const index of s.keys()){
 for (const [index, value] of s.entries()) {
     console.log(index, value);
   }
+
+
+  /*
+  
+  you can try this  for looping. it works for array
+  array.forEach(item => console.log(item));
+
+  */
