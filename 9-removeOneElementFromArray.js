@@ -41,7 +41,7 @@ console.log('Using indexOf and Splice '+array2);
 
 /**
  * 
- * THe previous method changes the original array. TO keep a copy opf the original array
+ * The previous method changes the original array. TO keep a copy opf the original array
  * use slice
  * 
  */
