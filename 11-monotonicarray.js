@@ -24,19 +24,13 @@ https://leetcode.com/problems/monotonic-array/
 
 */
 
-nums = [6,5,4,4]
-let start=0;
-for(let i=1; i<nums.length;i++){
-    if((start<i) && (nums[start]<=nums[i])){
-        start++;
-        continue;
+function isMonotonic(nums) {
+    let increase=true,decrease = true;
+    
+    for(let i=1;i<nums.length;i++){
+        
+        if(nums[i]> nums[i-1]) decrease = false;
+        if(nums[i]< nums[i-1]) increase = false;
     }
-    else{
-        if((start<i) && (nums[start]>=nums[i])){
-            start++;
-            continue;
-        }
-    }
-    break;
-}
-console.log(true);
+     return increase || decrease;
+   }
