@@ -1,6 +1,6 @@
 /**
 
-FOR THIS THE SOLUTION IS INTUITIVE BUT TIME LIMIT EXCEEDED
+THIS SOLUTION IS INTUITIVE ..... BUT TIME LIMIT EXCEEDED
 
 
 https://leetcode.com/problems/longest-mountain-in-array/
