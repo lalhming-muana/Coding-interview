@@ -27,3 +27,31 @@ console.log("Element of an array " +Object.keys(hashTable)[i]);
 // the value;
 console.log(hashTable[Object.keys(hashTable)[i]])
 }
+
+
+// store an array of three elements as the key
+
+let nums = [-1,0,1,2,-1,-4,-2,-3,3,0,4]
+
+let hash ={}
+
+// notice in the hash below, there are two [[ signs. this makes sure it is stored as an array
+// if you use only one it will all the elements.
+
+  hash[[nums[3], nums[6],nums[1]]] =[nums[3], nums[6],nums[1]];
+// Here nums element 3,6,1 are 2,-2,0 
+
+hash[[nums[3], nums[6],nums[10]]] =[nums[3], nums[6],nums[10]];
+
+hash[[nums[3], nums[6],nums[9]]] =[nums[3], nums[6],nums[9]];
+// Here nums element 3,6,9 are 2,-2,0  it is same as the line 38 so it is not stored.
+// we can use this to remove duplicates
+
+/**
+ * the  code will give an output
+ * { '2,-2,0': [ 2, -2, 0 ], '2,-2,4': [ 2, -2, 4 ] }
+ */
+
+
+
+console.log(hash)
