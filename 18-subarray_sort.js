@@ -18,5 +18,9 @@ Example 3:
 
 Input: nums = [1]
 Output: 0
+
+
+A good approach would be to use two pointers to check the start and end of the 
+sub array to sort
 */
 
