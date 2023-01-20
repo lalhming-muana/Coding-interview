@@ -9,6 +9,22 @@ contained in the original array.
 
 so the answer should be [0,7]
 
+similar questions to practice on leet-code
+
+https://leetcode.com/problems/maximum-ascending-subarray-sum/
+
+https://leetcode.com/problems/longest-increasing-subsequence/
+
+https://leetcode.com/problems/number-of-longest-increasing-subsequence/
+
+https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+
+https://leetcode.com/problems/longest-increasing-subsequence-ii/
+
+
+
+
+
 */
 
 
