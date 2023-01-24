@@ -28,7 +28,7 @@ Constraints:
 var moveZeroes = function(nums) {
     let end = nums.length -1;
     
-    let first =0
+    let first =0 
     let second =1
     
     while(second<= end){
