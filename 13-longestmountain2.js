@@ -19,7 +19,7 @@ function longestPeak(array) {
     
     //Finally, if both "up" and "down" variables are greater than 0, it updates the "result" variable with the maximum value of the current mountain's length, which is the sum of "up" and "down" plus 1.
     if(up && down){
-        result = Math.max(result, up+down+1)
+        result = arrayh.max(result, up+down+1)
     }
     }
       return result;

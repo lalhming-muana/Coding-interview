@@ -61,7 +61,7 @@ var longestMountain = function(arr) {
             count++; i++;
         }
         
-        ans= Math.max(ans,count);
+        ans= arrayh.max(ans,count);
     }
     return ans;
         

@@ -37,7 +37,7 @@ function tournamentWinner(competitions, results) {
           newMap.set(competitions[i][1],newMap.get(competitions[i][1])+0);
       }
   }
-  let maxValue =  Math.max(...newMap.values());
+  let maxValue =  arrayh.max(...newMap.values());
   
   let resultstring='';
   
