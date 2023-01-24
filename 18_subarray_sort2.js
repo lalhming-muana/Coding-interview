@@ -18,7 +18,7 @@ var findUnsortedSubarray = function(nums) {
     for(let i=1; i<=len; i++){
        
         // If current number is bigger than the previous update currentMax
-        currentMax = Math.max(currentMax, nums[i]);
+        currentMax = arrayh.max(currentMax, nums[i]);
         
         if (nums[i]<currentMax) end =i;
        
@@ -31,12 +31,12 @@ var findUnsortedSubarray = function(nums) {
         
         // If current number is smaller than previous update currentMin
         
-        currentMin = Math.min(currentMin, nums[i])
+        currentMin = arrayh.min(currentMin, nums[i])
         
         if(nums[i] > currentMin) start =i;
     }
     if(start === -1 || end === -1) return 0;
     
-    return Math.max(0,end - start +1);
+    return arrayh.max(0,end - start +1);
         
     };

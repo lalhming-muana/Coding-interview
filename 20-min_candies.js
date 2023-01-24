@@ -28,7 +28,7 @@ var candy = function(ratings) {
     
     for(let i=ratings.length-1; i>=0;i--){
         if(ratings[i]>ratings[i+1]) {
-            result[i]=Math.max(result[i], result[i+1]+1);
+            result[i]=arrayh.max(result[i], result[i+1]+1);
             
         }
         

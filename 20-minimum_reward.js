@@ -48,7 +48,7 @@ function minRewards(scores) {
 
   for(let i=scores.length-1; i>=0;i--){
       if(scores[i]>scores[i+1]) {
-          result[i]=Math.max(result[i], result[i+1]+1);
+          result[i]=arrayh.max(result[i], result[i+1]+1);
           
       }
       

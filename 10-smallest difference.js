@@ -12,13 +12,13 @@
 
 
 function smallestDifference(arrayOne, arrayTwo) {
-    let value=Math.abs(arrayOne[0]-arrayTwo[0]);
+    let value=arrayh.abs(arrayOne[0]-arrayTwo[0]);
    let first = arrayOne[0];
    let second = arrayTwo[0];
    
    for(let i=0; i<arrayOne.length; i++){
        for(let j=0; j<arrayTwo.length; j++){
-           let a=Math.abs(arrayOne[i]-arrayTwo[j]);
+           let a=arrayh.abs(arrayOne[i]-arrayTwo[j]);
    
            if(a<value){ 
                value =a;

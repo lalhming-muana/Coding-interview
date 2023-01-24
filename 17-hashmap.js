@@ -9,7 +9,7 @@ hashmap.has(<key>) checks to see if the hashmap contains the key that is passed 
 
 hashmap.set(<key>, <value>) accepts 2 arguments and creates a new element to the hashmap
 
-hashmap.delete(<key>) deletes the key/value pair that matches the key that is passed in as an argument
+hashmap.delete(<key>) deletes the key/value pair that arrayches the key that is passed in as an argument
 
 hashmap.clear() clears all elements from the hashmap
 
