@@ -39,28 +39,80 @@ https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-cr
 
 
 
-let i=0
-let lastLocation = 0;   
-    for(let j=0; j<blocks.length; j++){
-        let count =0;
-       
-        let compare;
-        let currentBlock = blocks[j][reqs[i]];
-       // console.log('j=',j,' currentBlock=',currentBlock)
-        if(currentBlock){
-            gym[j] = count+0;
-            lastLocation=j
-        }
-        if(!currentBlock){
-            count++;
-            compare = j - lastLocation;
-            console.log('lastlocation',lastLocation,' j=',j,'compare',compare)
-            gym[j] =Math.max(compare,count);
-        }
-        
-    }
-    
-    
+let blocks = [
+  {
+    "gym": false,
+    "office": true,
+    "school": true,
+    "store": false
+  },
+  {
+    "gym": true,
+    "office": false,
+    "school": false,
+    "store": false
+  },
+  {
+    "gym": true,
+    "office": false,
+    "school": true,
+    "store": false
+  },
+  {
+    "gym": false,
+    "office": false,
+    "school": true,
+    "store": false
+  },
+  {
+    "gym": false,
+    "office": false,
+    "school": true,
+    "store": true
+  }
+]
+let reqs= ["gym", "office", "school", "store"]
 
+function calculateDistance(a,b){
+    let r = Math.abs(a-b);
+    return r;
+}
 
-console.log(gym)
+function walkForward(blocks, reqs, i){
+ let result =[] 
+ let lastLocation = Infinity;   
+  for(let j=0; j<blocks.length; j++){
+      
+      let distance;
+      let currentBlock = blocks[j][reqs[i]];
+     
+      if(currentBlock){
+          result[j] = 0;
+          lastLocation=j
+      }
+      if(!currentBlock){
+          distance = calculateDistance(j,lastLocation);
+          result[j] =distance;
+      }
+      
+  }
+  lastLocation = Infinity;
+  for(let j=blocks.length-1; j>=0; j--){
+      
+      currentBlock = blocks[j][reqs[i]]
+      
+      if(currentBlock){
+          lastLocation =j;
+      }
+      
+      if(!currentBlock){
+          if(lastLocation != Infinity){
+              distance = calculateDistance(j,lastLocation);
+              result[j] =distance;
+          }
+          
+          if(lastLocation === Infinity) {
+             continue;}
+      }
+  }
+ 
