@@ -37,7 +37,7 @@ https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-cr
 }
 */
 
-
+/*
 
 let blocks = [
   {
@@ -72,47 +72,85 @@ let blocks = [
   }
 ]
 let reqs= ["gym", "office", "school", "store"]
+*/
+
+
 
 function calculateDistance(a,b){
-    let r = Math.abs(a-b);
-    return r;
+  let r = Math.abs(a-b);
+  return r;
 }
 
 function walkForward(blocks, reqs, i){
- let result =[] 
- let lastLocation = Infinity;   
-  for(let j=0; j<blocks.length; j++){
-      
-      let distance;
-      let currentBlock = blocks[j][reqs[i]];
-     
-      if(currentBlock){
-          result[j] = 0;
-          lastLocation=j
-      }
-      if(!currentBlock){
-          distance = calculateDistance(j,lastLocation);
-          result[j] =distance;
+let result =[] 
+let lastLocation = Infinity;   
+for(let j=0; j<blocks.length; j++){
+    
+    let distance;
+    let currentBlock = blocks[j][reqs[i]];
+   
+    if(currentBlock){
+        result[j] = 0;
+        lastLocation=j
+    }
+    if(!currentBlock){
+        distance = calculateDistance(j,lastLocation);
+        result[j] =distance;
+    }
+    
+}
+lastLocation = Infinity;
+for(let j=blocks.length-1; j>=0; j--){
+    
+    currentBlock = blocks[j][reqs[i]]
+    
+    if(currentBlock){
+        lastLocation =j;
+    }
+    
+    if(!currentBlock){
+        if(lastLocation != Infinity){
+            distance = calculateDistance(j,lastLocation);
+            result[j] =Math.min(result[j],distance);
+        }
+        
+        if(lastLocation === Infinity) {
+           continue;}
+    }
+}
+
+return result
+} 
+
+function apartmentHunting(blocks, reqs) {
+// Write your code here.
+
+let temp=[];
+for(let i=0; i<reqs.length; i++){
+  let temp1 = walkForward(blocks, reqs,i)
+  temp.push(temp1);
+}
+
+// find the index of the best apartment
+
+let bestIndex;
+let bestDistance = Infinity;
+
+for(let i=0;i<temp[0].length; i++){
+  let localBiggest=0;
+  for(let j=0; j< temp.length; j++){
+      if(temp[j][i] > localBiggest ){
+          localBiggest =temp[j][i];
       }
       
   }
-  lastLocation = Infinity;
-  for(let j=blocks.length-1; j>=0; j--){
-      
-      currentBlock = blocks[j][reqs[i]]
-      
-      if(currentBlock){
-          lastLocation =j;
-      }
-      
-      if(!currentBlock){
-          if(lastLocation != Infinity){
-              distance = calculateDistance(j,lastLocation);
-              result[j] =distance;
-          }
-          
-          if(lastLocation === Infinity) {
-             continue;}
-      }
+  
+  if(bestDistance > localBiggest){
+      bestDistance = localBiggest;
+      bestIndex =i;
   }
- 
+  
+}
+
+return bestIndex;
+}
